@@ -25,7 +25,7 @@ export class RomanConversorService {
     if (arabigo == 1000) {
       return "M"
     }
-    if (arabigo > 100) {
+    if (arabigo >= 100) {
       let centenasArabigas = Math.floor(arabigo / 100)
       centenasRomanos = this.transformaCentena(centenasArabigas)
       arabigo = arabigo % 100
@@ -39,7 +39,7 @@ export class RomanConversorService {
     let numeroRomano = `${centenasRomanos}${decenasRomanos}${unidadesRomanos}`
     return numeroRomano
   }
-  transformaCentena(n: Number) {
+  private transformaCentena(n: Number) {
     switch (n) {
       case (1):
         return "C"
@@ -59,10 +59,12 @@ export class RomanConversorService {
         return "DCC"
       case (9):
         return "CM"
+      default:
+        return ""
     }
 
   }
-  transformaDecena(n: Number) {
+  private transformaDecena(n: Number) {
     switch (n) {
       case (1):
         return "X"
@@ -82,9 +84,11 @@ export class RomanConversorService {
         return "LXXX"
       case (9):
         return "XC"
+      default:
+        return ""
     }
   }
-  transformaUnidad(n: Number) {
+  private transformaUnidad(n: Number) {
     switch (n) {
       case (1):
         return "I"
@@ -104,6 +108,8 @@ export class RomanConversorService {
         return "VIII"
       case (9):
         return "IX"
+      default:
+        return ""
     }
   }
 }

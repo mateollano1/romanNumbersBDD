@@ -26,6 +26,10 @@ describe('RomanConversorService', () => {
     let res = service.transformNumber(-10)
     expect(res).toEqual("El número ingresado debe ser positivo")
   });
+  it('convertir_el_1', () => {
+    let res = service.transformNumber(1)
+    expect(res).toEqual("I")
+  });
   it('convertir_el_10', () => {
     let res = service.transformNumber(10)
     expect(res).toEqual("X")
@@ -82,8 +86,4 @@ describe('RomanConversorService', () => {
     let res = service.transformNumber(1000)
     expect(res).toEqual("M")
   });
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-  
 });

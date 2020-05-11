@@ -1,0 +1,17 @@
+<div>
+    <div class="centerB">
+        <div style="display: flex; flex-direction: column;">
+            <div style="text-align: center;">
+
+                <h6 class="mb-5">Ingrese un número arábigo: </h6>
+            </div>
+            <input type="number" #number><br>
+            <button (click)="transform(number.value)" class="btn btn-primary">convertir</button>
+            <label *ngIf="showError">{{errorMessage}}</label>
+        </div>
+        <div style="text-align: center; margin-top: 3em;">
+
+            <span style="font-size: 48px;">{{resultado}}</span>
+        </div>
+    </div>
+</div>
